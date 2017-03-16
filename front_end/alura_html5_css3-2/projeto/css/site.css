@@ -116,7 +116,7 @@ em {
 }
 
 main {
-    width: 80%;
+    width: calc(100% - 300px * .9);
     float: left;
     padding-bottom: 4em;
 }
@@ -129,7 +129,7 @@ main {
 }
 
 .navegacao-site {
-    width: 20%;
+    width: calc(300px * .9);
     float: right;
     position: relative;
     top: 300px;

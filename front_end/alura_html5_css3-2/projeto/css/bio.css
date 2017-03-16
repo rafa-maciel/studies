@@ -16,3 +16,39 @@
     float: right;
     margin-right: 0;
 }
+
+.habilidades th {
+    color: #FFF;
+    font-weight: bold;
+    background-color: #3C1D3D;
+}
+
+.habilidades tbody th {
+    background-color: #851944;
+}
+
+.habilidades td {
+    background-color: #EEE;
+    color: inherit;
+}
+
+.habilidades {
+    margin: 1em 0;
+    border-collapse: separate;
+    border-spacing: .25em;
+}
+
+.habilidades th,
+.habilidades td {
+    padding: 1em;
+}
+
+.habilidades [colspan] {
+    text-align: center;
+    font-style: italic;
+}
+
+.habilidades [rowspan] {
+    vertical-align: middle;
+}
+
