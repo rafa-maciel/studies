@@ -3,6 +3,8 @@ body {
     background-color: #F2FFFC;
     font-size: 120%;
     line-height: 1.5;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 h1,
@@ -34,6 +36,13 @@ main a {
     color: #851944;
 }
 
+main a:hover,
+main a:focus,
+footer a:focus,
+footer a:hover {
+    color: red;
+}
+
 main p {
     text-align: justify;
     margin: 1em 0;
@@ -50,6 +59,11 @@ main p {
     color: inherit;
     font-family: "Open Sans Condensed", "Arial", sans-serif;
     text-transform: lowercase;
+}
+
+.navegacao-site a:hover,
+.navegacao-site a:focus {
+    text-shadow: 0 0 2px pink;
 }
 
 .navegacao-site h1 {
@@ -116,23 +130,27 @@ em {
 }
 
 main {
-    width: calc(100% - 300px * .9);
-    float: left;
+    width: calc(100% - 0.9 * 300px);
+    /*float: left;*/
+    flex-grow: 1;
     padding-bottom: 4em;
 }
 
 .minha-foto,
 .navegacao-site {
     border-left: .5em solid black;
-    border-bottom: .5em solid black;
     box-sizing: border-box;
+}
+.minha-foto {
+    border-bottom: .5em solid #000;
 }
 
 .navegacao-site {
-    width: calc(300px * .9);
-    float: right;
-    position: relative;
-    top: 300px;
+    width: calc(0.9 * 300px);
+    /*float: right;*/
+    /*position: relative;*/
+    /*top: 300px;*/
+    padding-top: calc(300px + 1em);
 }
 
 .minha-foto {
@@ -140,4 +158,33 @@ main {
     top: 0;
     right: 0;
     height: 300px;
+}
+
+.icones-redes-sociais a {
+    position: relative;
+}
+
+.icones-redes-sociais a:hover::after,
+.icones-redes-sociais a:focus::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    background: black;
+    color: white;
+    top: 100%;
+    width: 300%;
+    right: 0;
+    text-indent: 0;
+    font-size: .75em;
+}
+
+.icones-redes-sociais a:hover::before,
+.icones-redes-sociais a:focus::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1em;
+    height: 1em;
+    background-color: black;
+    transform: translateY(.5em) rotate(45deg);
 }

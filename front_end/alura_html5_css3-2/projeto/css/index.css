@@ -1,3 +1,7 @@
+body {
+    display: block;
+}
+
 .foto-home {
     height: 200px;
     border-radius: 50%;
@@ -26,7 +30,26 @@
     -webkit-transform: rotate(-5deg) skew(-10deg);
             transform: rotate(-5deg) skew(-10deg);
     display: inline-block;
+    animation: flutua 1s infinite;
+    animation-direction: alternate; 
+    animation-timing-function: ease-in-out;
+    position: relative;
 }
+
+@keyframes flutua {
+    from {
+        top: -5px;
+    }
+    to {
+        top: 5px;
+    }
+}
+
+.saudacao:hover em{
+    animation-play-state: paused;
+}
+
+
 .botao-index {
     font-size: 1.25em;
     background-color: #851944;
@@ -37,7 +60,17 @@
     margin: 2em auto;
     display: block;
     text-align: center;
+    text-decoration: none;
+    transition: .5s;
 }
+
+.botao-index:hover, 
+.botao-index:focus {
+    background-color: #C54974;
+    color: #FFF;
+    box-shadow: 0 0 2em #FA9;
+}
+
 .secao-inicio {
     padding: 2em;
 }
@@ -58,14 +91,37 @@
 .trabalhos h2 {
     color: #FFF;
 }
+
 .trabalhos ul {
+    /*
     overflow: hidden;
     border: .5em solid black;
+    */
+    display: flex;
 }
+
 .trabalhos li {
+/*
     float: left;
     width: 33.333%;
+    */
+    border: .5em solid #000;
+    flex: 1;
 }
+
+.trabalhos li:first-child {
+    order: 2;
+    transform: scale(1.2);
+}
+
+.trabalhos li:nth-child(2) {
+    order: 1;
+}
+
+.trabalhos li:last-child {
+    order: 3;
+}
+
 .trabalhos img {
     width: 100%;
     display: block;
@@ -125,7 +181,24 @@ body {
     right: 0;
     top: 0;
     left: 0;
+    -webkit-animation: aparecer 2s;
+    animation: aparecer 1s;
 }
+
+@-webkit-keyframes aparecer {
+    from {
+        opacity: 0;
+        -webkit-transform: scale(.001);
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(.001);
+    }
+}
+
 .palavra-home {
     font-family: "Shadows Into Light", cursive;
     font-weight: bold;
@@ -220,17 +293,12 @@ body {
 
     line-height: 1;
 
-    /* largura = 14em */
-    /* altura = 3.5em */
-    /* tx = .707 * h - .707 * w + w */
-    /* ty = -.707 * h */
     -webkit-transform: translate(calc(.707 * (3.5em - 100%) + 100%), calc(-.707 * 3.5em)) rotate(45deg);
             transform: translate(calc(.707 * (3.5em - 100%) + 100%), calc(-.707 * 3.5em)) rotate(45deg);
     -webkit-transform-origin: 0 0;
             transform-origin: 0 0;
 
-    width: 14em;
-    padding: 1em 0;
+    padding: 1em 3em;
     box-sizing: border-box;
 
     text-align: center;
@@ -241,6 +309,12 @@ body {
 
     font-size: 1.2em;
     font-family: "Open Sans Condensed", sans-serif;
+
+
+    -webkit-animation: aparece 0.5s;
+    animation: aparece 0.5s;
+    -webkit-animation-delay: 2s;
+    animation-fill-mode: backwards;
 }
 .blog .inicio-post {
     position: absolute;
@@ -251,10 +325,14 @@ body {
     background-color: #F2FFFC;
     color: #000;
     padding: 1.5em;
+    display: none;
 }
-.blog .mais-recente {
+.blog a:hover + .inicio-post,
+.blog a:focus + .inicio-post {
+    display: block;
+}
+.blog a:hover,
+.blog a:focus {
     background-color: #F2FFFC;
-}
-.blog .mais-recente a {
     color: #F26;
 }

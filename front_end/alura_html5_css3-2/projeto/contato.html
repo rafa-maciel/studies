@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Contato - João da Silva</title>
+    <title>João da Silva - Contato</title>
     <link rel="icon" href="imagens/favicon.png">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/site.css">
@@ -16,33 +16,33 @@
         <div class="container">
             <form>
                 <fieldset>
-                    <legend>Dados Pessoais</legend>
-                    <label for="nome" class="com-icone">Nome</label>
-                    <input type="text" name="nome" id="nome" pattern="[A-Za-z ']{4,}" title="O nome deve conter no minimo 4 caracters e possuir apenas letras" required="true" autofocus="true" placeholder="Seu Nome Completo">
-                    <label for="email" class="com-icone">E-mail</label>
-                    <input type="email" name="email" id="email" required="true" placeholder="seu@email.com">
+                    <legend>Seus dados</legend>
+                    <label class="com-icone" for="nome">Nome completo</label>
+                    <input id="nome" type="text" name="nome" required autofocus pattern="[A-Za-z ']{4,}" title="O nome precisa ter pelo menos 4 caracteres">
+                    <label class="com-icone" for="email">E-mail</label>
+                    <input id="email" type="email" name="email" required placeholder="seu@email.com">
                 </fieldset>
-
                 <fieldset>
-                    <legend>Assunto</legend>    
+                    <legend>Assunto</legend>
                     <label>
-                        <input type="radio" name="assunto" value="blog">
+                        <input type="radio" name="assunto" value="Blog">
                         Blog
                     </label>
                     <label>
-                        <input type="radio" name="assunto" value="servico">
+                        <input type="radio" name="assunto" value="Serviço">
                         Serviço
                     </label>
                     <fieldset>
-                        <input type="radio" name="assunto" id="outro">
-                        <label for="outro">Outros</label>
+                        <input type="radio" name="assunto" value="Outro" id="outro">
+                        <label for="outro">
+                            Outro
+                        </label>
                         <input type="text" name="outro-assunto">
                     </fieldset>
                 </fieldset>
-
                 <label for="mensagem">Mensagem</label>
-                <textarea name="mensagem" id="mensagem" cols="60" rows="10" placeholder="Digite sua mensagem"></textarea>
-                <button type="submit">Enviar</button>
+                <textarea id="mensagem" name="mensagem" cols="60" rows="10" placeholder="Digite aqui sua mensagem"></textarea>
+                <button type="submit">Enviar mensagem</button>
             </form>
         </div>
     </main>
@@ -60,17 +60,17 @@
         </nav>
         <ul class="icones-redes-sociais">
             <li>
-                <a href="https://github.com/joaodasilva" class="github">
+                <a href="https://github.com/joaodasilva" class="github" data-tooltip="Veja meus projetos opensource">
                     Github
                 </a>
             </li>
             <li>
-                <a href="https://twitter.com/joaodasilva" class="twitter">
+                <a href="https://twitter.com/joaodasilva" class="twitter" data-tooltip="Siga-me no Twitter">
                     Twitter
                 </a>
             </li>
             <li>
-                <a href="https://br.linkedin.com/pub/joão-da-silva/32/4/508" class="linkedin">
+                <a href="https://br.linkedin.com/pub/joão-da-silva/32/4/508" class="linkedin" data-tooltip="Veja meu currículo">
                     LinkedIn
                 </a>
             </li>
